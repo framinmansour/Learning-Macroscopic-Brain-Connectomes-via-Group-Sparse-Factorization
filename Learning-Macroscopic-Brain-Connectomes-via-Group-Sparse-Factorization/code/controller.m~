@@ -1,0 +1,36 @@
+function controller(dataIndex)
+
+addpath(genpath('tensor_toolbox'));	
+
+if dataIndex == 1
+    cd '../data';
+    
+elseif dataIndex == 2
+else
+    fprintf('There is no dataset with dataIndex %d', dataIndex);
+end
+k = 5;
+stg1 = 3;
+
+
+if dataIndex == 1
+    %Nsv = 11823;
+    Nsv = 5;
+    brain(dataIndex, Nsv, k, stg1);
+elseif dataIndex == 2
+    Nsv = 15033;
+    brain(dataIndex, Nsv, k, stg1);
+else
+    fprintf('There is no dataset with dataIndex %d', dataIndex);
+end
+
+
+if dataIndex == 1
+    load();
+    load();
+    load();
+    
+elseif dataIndex == 2
+else
+    fprintf('There is no dataset with dataIndex %d', dataIndex);
+end
