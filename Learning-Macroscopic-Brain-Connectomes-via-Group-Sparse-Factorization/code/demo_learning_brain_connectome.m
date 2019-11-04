@@ -1,6 +1,6 @@
 function demo_learning_brain_connectome(dataIndex)
 
-addpath(genpath('tensor_toolbox'),genpath('../data'));	
+addpath(genpath('tensor_toolbox'),genpath('../data'));
 
 %% Extracting sub tensors and matrices
 % Extrcts the dataset into subsets and newsubsets. The resulting matrices

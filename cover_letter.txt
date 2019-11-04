@@ -1,0 +1,8 @@
+The followings have been added or modified:
+1) Explanation on the meaning of different terms such as connectomes, fascicles, diffusion signal, etc. at the beginning of section 1, "introduction".
+2) Intuitive explanation on dictionary D, how it is obtained and its dimensions in section 2, "Encoding brain connectomes as tensors".
+3) Computational resources added as appendix E1. 
+4) Procedure of generating datasets is explained in appendix E2.
+5) Explanation on the angular distance algorithm in appendix E5.
+6) Some minor modifications in the text, pictures and graphs as well as adding the code release link. 
+7) Describing how we chose regularization coefficients in section 5.2, "Group Sparse Optimization".
