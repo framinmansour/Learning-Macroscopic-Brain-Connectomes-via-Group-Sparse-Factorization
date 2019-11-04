@@ -431,18 +431,18 @@ function displayPhiDiff(Phi, orients, coords, lineSpec)
         end
         hold on
         directionsFull = directionsFull.';
-        q=plot3(locationsFull(:,1), locationsFull(:,2), locationsFull(:,3), lineSpec, 'MarkerSize', 2, 'LineWidth', 1.75);
-%         q=plot3(locationsFull(:,1), locationsFull(:,2), locationsFull(:,3));
+%        q=plot3(locationsFull(:,1), locationsFull(:,2), locationsFull(:,3), lineSpec, 'MarkerSize', 2, 'LineWidth', 1.75);
+        q=plot3(locationsFull(:,1), locationsFull(:,2), locationsFull(:,3));
 %         q = quiver3(locationsFull(:,1), locationsFull(:,2), locationsFull(:,3), ...
 %                     directionsFull(:,1), directionsFull(:,2), directionsFull(:,3), 0.1);
 %         % assign colour to fascicle depending on how many fascicles are
 %         % plotted
 %         
-        hsvColour(:,1) = colourIndex/numFascicles;
-        hsvColour(:,2) = 1;
-        hsvColour(:,3) = 1;
-        q.Color = hsv2rgb(hsvColour);
-        colourIndex = colourIndex + 1;
+%         hsvColour(:,1) = colourIndex/numFascicles;
+%         hsvColour(:,2) = 1;
+%         hsvColour(:,3) = 1;
+%         q.Color = hsv2rgb(hsvColour);
+%         colourIndex = colourIndex + 1;
 %         q.ShowArrowHead = 'off';
     end
 end

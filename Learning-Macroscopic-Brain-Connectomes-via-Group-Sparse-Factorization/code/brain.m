@@ -41,12 +41,12 @@ calStage1 = true;
 % stage1 decides the method used in stage 1
 % 1 is Model 1 (just use the expert Phi as initialization for Stage2)
 % 2 is OMP for the selection of orientations
-% 3 is GreedyDirections (main method in the paper)
+% 3 is GreedyOrientation (main method in the paper)
 stage1 = stg1;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 0 not go through stage 2
 % 1 go through stage 2
-stage2 = 0;
+stage2 = 1;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % maximum # of orientations set nonzero for each fascicle at stage1
 % Only valid for stage1 == 2 or 3
@@ -57,7 +57,7 @@ numOrient = k;
 regStage1 = 0.01;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % this is the max iterations for optimization at stage2
-maxIter = 15;
+maxIter = 30;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % this is the max iterations for optimization at stage2
 % the relative tolerance for difference of last two objective value
@@ -65,12 +65,12 @@ maxIter = 15;
 relTolerance = 1e-10;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % this is stepsize for optimization at stage2
-stepSize = 1e-5;
+stepSize = 1e-2;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % lambdaL1 is the regularization parameter for L1 norm of optimization at stage2
 % lambdaGroup is regularization parameter for group regularization of optimization at stage2
-lambdaL1 = 10;
-lambdaGroup = 10;
+lambdaL1 = 1;
+lambdaGroup = 0.1;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % filename of storing results
 saveNameStage1 = ['../data/stage1/Phi_' int2str(Nsv) '_' int2str(dataIndex) '_' int2str(stage1) '_' int2str(numOrient) '_' num2str(regStage1) '.mat'];
