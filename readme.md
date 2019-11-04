@@ -1,0 +1,7 @@
+# How to Run these Codes?
+1. Download datasets. For more information, please check the file __*save_compact_matrices*__.m in **data** folder (here is the [link](./data/save_compact_matrices.m "save_compact_matrices"))
+2. If not exist yet, please create three folders named as **subsets**, **newsubsets** and **stage1** under **data** folder
+3. Run  __*save_compact_matrices*__.m after choosing desired dataset. Check the comments in __*save_compact_matrices*__.m to know how to do so. Note that for each dataset this file is to be run only once unless the data is modified, as this file is used to both transfer the origin data to the data we will actually use and store the transfered data 
+4. Use **mex** function of __*matlab*__ to compile __*forLoop*__.c in **mex** folder. For more information, please check this [link](https://www.mathworks.com/help/matlab/ref/mex.html). Remember to move the compiled file from **mex** folder to **codes** folder. 
+5. __*brain*__.m,  __*stageOne*__.m and __*stageTwo*__.m are main files to do optimization and deliver results. Among them, __*brain*__.m is the one users will call the other two matlab files and save results; __*stageOne*__.m is to do jobs at stage 1 (initialize Phi with different strategies as warm start in the optimization at stage2) and to call __*stage2*__.m; __*stageTwo*__.m is to do jobs at stage 2 (optimize Phi). To know more about each file, please check their comments
+6. The code files in **figures** folder are to draw figures on results. For now, let's just ignore them. 
