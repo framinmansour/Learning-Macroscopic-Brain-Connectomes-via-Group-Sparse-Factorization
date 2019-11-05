@@ -24,7 +24,7 @@ We provide demos to explain how to:
  
 
 ## [License](TBA).
-#### Copyright (2019), [Martha White](https://webdocs.cs.ualberta.ca/~whitem/), whitem@ualberta.ca, [Franco Pestilli](http://francopestilli.com/), frakkopesto@gmail.com, [Cesar Caiafa](http://web.fi.uba.ar/~ccaiafa), ccaiafa@gmail.com, [Russel Greiner](https://rgreiner6.wixsite.com/greiner), russel rgreiner@ualberta.ca, [Farzane Aminmansour](https://www.linkedin.com/in/faminmansour/), aminmans@ualberta.ca
+#### Copyright (2019), [Martha White](https://webdocs.cs.ualberta.ca/~whitem/), whitem@ualberta.ca, [Franco Pestilli](http://francopestilli.com/), frakkopesto@gmail.com, [Cesar Caiafa](http://web.fi.uba.ar/~ccaiafa), ccaiafa@gmail.com, [Russel Greiner](https://rgreiner6.wixsite.com/greiner), [Andrew Patterson](https://www.linkedin.com/in/andy-patterson-1940b068), ap3.ualberta.ca, rgreiner@ualberta.ca, [Farzane Aminmansour](https://www.linkedin.com/in/faminmansour/), aminmans@ualberta.ca
  
 ## [Documentation](TBA).
 
@@ -40,10 +40,12 @@ F.P. was supported by NSF IIS-1636893, NSF BCS-1734853, NSF AOC 1916518, NIH NCA
 1. Download (https://github.com/framinmansour/Learning-Macroscopic-Brain-Connectomes-via-Group-Sparse-Factorization).
 2. [Start MatLab](http://www.mathworks.com/help/matlab/startup-and-shutdown.html).
 3. Add repository to the [matlab search path](http://www.mathworks.com/help/matlab/ref/addpath.html).
-4. 
+4. Use **mex** function of __*matlab*__ to compile __*forLoop*__.c in **mex** folder. For more information, please check this [link](https://www.mathworks.com/help/matlab/ref/mex.html). Remember to move the compiled file from **mex** folder to **codes** folder.
+5. If not exist yet, please create three folders named as **subsets**, **newsubsets** and **stage1** under **data** folder
 
 ## Dependencies.
 * [MatLab](http://www.mathworks.com/products/matlab/).
+* [C/C++ compiler]()
 
 ## Getting started.
 
@@ -51,32 +53,13 @@ F.P. was supported by NSF IIS-1636893, NSF BCS-1734853, NSF AOC 1916518, NIH NCA
 * Download the repository from the TAR/ZIP files linked [here](https://github.com/framinmansour/Learning-Macroscopic-Brain-Connectomes-via-Group-Sparse-Factorization/archive/master.zip).
 * UNZIP/UNTAR the file. 
 
-### 2. [Run the demo_connectome_encoding code](/scripts/demos/demo_connectome_encoding.m).
-Here you will learn about creating the tensor representation of a connectoms and perform basic operations such as identifying fascicles having a particular spatial orientation in a small voxel area. 
+### 2. [Run the demo_learning_brain_connectome code](/code/demo_learning_brain_connectome.m).
+Here you will learn about extracting prerequisit matrices into the folders **subsets** and **newsubsets** in order to run the main script to initialize and optimize brain tensors. Then the demo will visualize fascicles in the resulting brain tensors.
+We need to pass two arguments to this function: the first argument determines which dataset to be processed where `1` means Arcuate and `2` means ARC-SLF. The second argument determines how do we want the predicted brain tensor Phi to be initialized, `1` initializes the predicted_Phi with the expert_Phi, `2` initalizes it with the output of OMP algorithm, and `3` will use GreedyOrientation method.
 ```
-  >>  demo_connectome_encoding.m
+  >>  demo_learning_brain_connectome(#dataIndex, #stage1)
 ```
-### 6. [Run the demo_connectome_data_comparison code](/scripts/demos/demo_connectome_data_comparison.m).
-This code reproduce Fig. 3 of the paper "Multidimensional encoding of brain connectomes", by C. Caiafa and F. Pestilli. 
-```
-  >>  demo_connectome_data_comparison.m
-```
-### 7. [Run the demo_virtual_lesion code](/scripts/demos/demo_virtual_lesion.m).
-This code allows you to compute virtual lesions on a particular brain dataset and visualize particular major tracts together with their path-neighborhood, i.e. fascicles sharing same voxels. 
-```
-  >>  demo_virtual_lesion.m
-```
-### 8. [Run the demo_LiFE code](/scripts/demos/demo_LiFE.m).
-This code allows you to compute compute the fascicles weights for two different tractography methods, probabilistic and deterministic tractographies, on a same brain. This is similar to the original LiFE demo in  https://github.com/francopestilli/life but here a full brain dataset is used. The optimization (fitting fascicles weights) runs in about 3 hours on a modern Intel processor with 8GB of RAM. This code has been tested with MatLab 2015b on Ubuntu 15+ and Mac OSX 10.11.
-```
-  >>  demo_LiFE.m
-```
+__*brain*__.m,  __*stageOne*__.m and __*stageTwo*__.m are main files to do optimization and deliver results. Among them, __*brain*__.m is the one users will call the other two matlab files and save results; __*stageOne*__.m is to do jobs at stage 1 (initialize Phi with different strategies as warm start in the optimization at stage2) and to call __*stage2*__.m; __*stageTwo*__.m is to do jobs at stage 2 (optimize Phi). To know more about each file, please check their comments
 
-
-# How to Run these Codes?
-1. Download datasets. For more information, please check the file __*save_compact_matrices*__.m in **data** folder (here is the [link](./data/save_compact_matrices.m "save_compact_matrices"))
-2. If not exist yet, please create three folders named as **subsets**, **newsubsets** and **stage1** under **data** folder
-3. Run  __*save_compact_matrices*__.m after choosing desired dataset. Check the comments in __*save_compact_matrices*__.m to know how to do so. Note that for each dataset this file is to be run only once unless the data is modified, as this file is used to both transfer the origin data to the data we will actually use and store the transfered data 
-4. Use **mex** function of __*matlab*__ to compile __*forLoop*__.c in **mex** folder. For more information, please check this [link](https://www.mathworks.com/help/matlab/ref/mex.html). Remember to move the compiled file from **mex** folder to **codes** folder. 
-5. __*brain*__.m,  __*stageOne*__.m and __*stageTwo*__.m are main files to do optimization and deliver results. Among them, __*brain*__.m is the one users will call the other two matlab files and save results; __*stageOne*__.m is to do jobs at stage 1 (initialize Phi with different strategies as warm start in the optimization at stage2) and to call __*stage2*__.m; __*stageTwo*__.m is to do jobs at stage 2 (optimize Phi). To know more about each file, please check their comments
-6. The code files in **figures** folder are to draw figures on results. For now, let's just ignore them. 
+### 3. [Run other scripts to reproduce evaluation results](/code/figures).
+The code files in **figures** folder are to draw figures on the results to evaluate OMP and GreedyOrientation in the **Screening stage** or **stage1**.
