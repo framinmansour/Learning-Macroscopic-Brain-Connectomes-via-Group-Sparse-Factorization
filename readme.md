@@ -24,7 +24,7 @@ We provide demos to explain how to:
  
 
 ## [License](TBA).
-#### Copyright (2019), [Martha White](https://webdocs.cs.ualberta.ca/~whitem/), whitem@ualberta.ca, [Franco Pestilli](http://francopestilli.com/), frakkopesto@gmail.com, [Cesar Caiafa](http://web.fi.uba.ar/~ccaiafa), ccaiafa@gmail.com, [Russel Greiner](https://rgreiner6.wixsite.com/greiner), [Andrew Patterson](https://www.linkedin.com/in/andy-patterson-1940b068), ap3.ualberta.ca, rgreiner@ualberta.ca, [Farzane Aminmansour](https://www.linkedin.com/in/faminmansour/), aminmans@ualberta.ca
+#### Copyright (2019), [Martha White](https://webdocs.cs.ualberta.ca/~whitem/), whitem@ualberta.ca, [Franco Pestilli](http://francopestilli.com/), frakkopesto@gmail.com, [Cesar Caiafa](http://web.fi.uba.ar/~ccaiafa), ccaiafa@gmail.com, [Russel Greiner](https://rgreiner6.wixsite.com/greiner), [Andrew Patterson](https://www.linkedin.com/in/andy-patterson-1940b068), ap3@ualberta.ca, [Lei Le](http://homes.sice.indiana.edu/leile/), leile@iu.edu, rgreiner@ualberta.ca, [Farzane Aminmansour](https://www.linkedin.com/in/faminmansour/), aminmans@ualberta.ca
  
 ## [Documentation](TBA).
 
